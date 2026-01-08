@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import profileImg from '../assets/profile-dark.png';
 
 const Navbar = () => {
     const [isActive, setIsActive] = useState(false);
@@ -9,7 +10,12 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <div className="logo">PARAG KAKAD</div>
+            <div className="logo">
+                <a href="#about" className="logo-link">
+                    <img src={profileImg} alt="Profile" className="nav-profile-img" />
+                    PARAG KAKAD
+                </a>
+            </div>
             <ul className={`nav-links ${isActive ? 'active' : ''}`}>
                 <li><a href="#home" onClick={() => setIsActive(false)}>Home</a></li>
                 <li><a href="#about" onClick={() => setIsActive(false)}>About</a></li>
